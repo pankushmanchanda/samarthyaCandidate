@@ -1,0 +1,8 @@
+{
+ "data": [
+   { "id": 1, "name": "Dashboard", "path": "/dashboard","icon":"dashboard" },
+   { "id": 2, "name": "Applied Jobs", "path": "/applied-jobs" ,"icon":"home"},
+   { "id": 3, "name": "Job Search", "path": "/job-search" ,"icon":"card_travel"},
+   { "id": 4, "name": "Placement History", "path": "/placement-history","icon":"history" }
+ ]
+}

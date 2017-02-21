@@ -1,3 +1,66 @@
-<!--<h1>
-  {{title}}
-</h1>-->
+<!--Toolbar and Sidenav-->
+<md-sidenav-container fullscreen>
+
+    <!--Sidenav start-->
+    <md-sidenav #sidenav mode="over" opened="false">
+        <!--Sidenav toolbar-->
+        <md-toolbar color="primary">
+            <span>Samarthya Candidate</span>
+        </md-toolbar>
+        <!--Sidenav list items-->
+        <md-nav-list>
+            <md-list-item *ngFor="let item of candidateMenu" routerLink="{{item.path}}" routerLinkActive="active" (click)="sidenav.toggle()">
+                <span><i class="material-icons myIcon" >{{item.icon}}</i></span><span>{{item.name}}</span>
+            </md-list-item>
+        </md-nav-list>
+    </md-sidenav>
+    <!--Sidenav end-->
+
+    <!--main toolbar start-->
+    <md-toolbar color="primary">
+        <!--toolbar items-->
+        <span><button md-icon-button (click)="sidenav.toggle()" #myButton id="sidebarButton"> 
+<i class="material-icons">menu</i>
+</button></span>
+        <span>Samarthya </span>
+        <span class="flex"></span>
+
+        <span>
+<!--Notification button-->
+<button md-icon-button [mdMenuTriggerFor]="menuNotification">
+    <i class="material-icons">notifications_active</i>  
+</button>
+<md-menu #menuNotification x-position="before">
+    <md-list>
+        <md-list-item>
+            <p md-line>No new Notification</p>
+        </md-list-item>
+    </md-list>
+</md-menu>
+<!--Account button-->
+<button md-icon-button [mdMenuTriggerFor]="menuAccount">
+    <i class="material-icons">account_circle</i>  
+</button>
+<md-menu #menuAccount x-position="before">
+    <md-nav-list>
+        <md-list-item>
+            <p md-line><b>User</b></p>
+        </md-list-item>
+        <md-list-item>
+            <p md-line>Profile</p>
+        </md-list-item>
+        <md-list-item>
+            <p md-line>Change Password</p>
+        </md-list-item>
+        <md-list-item>
+            <p md-line routerLink="/logout">Log Out</p>
+        </md-list-item>
+    </md-nav-list>
+    </md-menu>
+</span>
+    </md-toolbar>
+    <!--toolbar end -->
+
+    <!--Routing Selector-->
+    <router-outlet></router-outlet>
+</md-sidenav-container>

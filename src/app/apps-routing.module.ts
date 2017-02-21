@@ -9,11 +9,11 @@ import {JobSearchComponent} from "./components/job-search/job-search.component"
 import {PlacementHistoryComponent} from "./components/placement-history/placement-history.component"
 
 const routes: Routes = [
-    { path: '', redirectTo: '/components/dashboard/dashboard', pathMatch: 'full' },
-    { path: 'components/dashboard/dashboard', component: DashboardComponent },
-    { path: 'components/applied-jobs/applied-jobs', component: AppliedJobsComponent },
-    { path: 'components/job-search/job-search', component:JobSearchComponent },
-    { path: 'components/placement-history/placement-history', component: PlacementHistoryComponent }
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'applied-jobs', component: AppliedJobsComponent },
+    { path: 'job-search', component:JobSearchComponent },
+    { path: 'placement-history', component: PlacementHistoryComponent }
 ];
 
 @NgModule ({
